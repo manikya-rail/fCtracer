@@ -1,0 +1,9 @@
+image: ruby:2.7
+
+production:
+  stage: deploy
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=farm-tracer --api-key=$HEROKU_PRODUCTION_API_KEY
+  only:
+    - master

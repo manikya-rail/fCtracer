@@ -1,0 +1,2 @@
+module CherryHelper
+end

@@ -1,0 +1,248 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+// You can add your own custom components/styles here
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display font-bold;
+}
+
+@screen small {
+  /* Main Navigation */
+  .main-navigation {
+    z-index: 101;
+    overflow: hidden;
+    opacity: 0;
+    top: -100%;
+    text-align: center;
+    @apply bg-addition fixed w-full h-full right-0 py-12 px-8 flex-col justify-center;
+  }
+  .main-navigation.is-open {
+    @apply top-0 opacity-100;
+  }
+}
+
+#top-area {
+  .container {
+    max-width: 1100px;
+  }
+}
+
+#how_it_works {
+  background: url(../images/home-banner-bg.jpg) 50% 0 repeat-x;
+  padding-top: 330px;
+  padding-bottom: 0;
+  .holder {
+    max-width: 472px;
+    width: 100%;
+    position: relative;
+    padding-top: 60px;
+    padding-left: 50px;
+  }
+  .badge {
+    position: absolute;
+    top: -140px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: #fff;
+    max-width: 500px;
+    right: -28px;
+    .clamp {
+      background: #000;
+      opacity: .8;
+      border-radius: 15px;
+      padding: 8px 10px 8px 80px;
+    }
+    img {
+      width: 97px;
+      height: 97px;
+      margin-right: -65px;
+      position: relative;
+    }
+  }
+  @media screen and (max-width:1000px) {
+    .holder {
+      padding-left: 0;
+    }
+  }
+}
+
+#top-area {
+  .ft-sc-banner {
+    display: flex;
+    flex-direction: column;
+  }
+  @media screen and (max-width:767px) {
+    #mobScreen {
+      position: relative;
+      margin: 0 0 -250px;
+      order: 1;
+      justify-content: center;
+      height: 296px;
+      overflow: hidden;
+      & + div {
+        margin-top: 0;
+        order: 0;
+      }
+      .w-1\/2 {
+        width: 100%;
+        img {
+          width: 300px;
+        }
+      }
+    }
+    #how_it_works {
+      order: 2;
+      .w-1\/2 {
+        width: auto;
+        margin: 0 15px;
+      }
+      .holder {
+        max-width: 100%;
+        padding-top: 25px;
+        text-align: center;
+      }
+      .badge {
+        max-width: 100%;
+        right: auto;
+        top: -120px;
+        text-align: left;
+        font-size: 13px;
+        img {
+          width: 75px;
+          height: 75px;
+          margin-right: -45px;
+        }
+        .clamp {
+          padding-left: 60px;
+        }
+      }
+      .title-h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+      }
+    }
+    .form-holder {
+      margin-bottom: 37px;
+    }
+    .steps-list {
+      li {
+        flex-direction: column;
+        width: 280px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+      }
+      .flex-0 {
+        margin-bottom: 20px;
+        img{
+          width: 100px;
+        }
+      }
+    }
+    .ft-sc-banner {
+      padding-bottom: 15px;
+    }
+  }
+  @media screen and (max-width:767px) {
+    #how_it_works {
+      .badge {
+        .clamp {
+          padding-left: 10px;
+        }
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  #about {
+    .max-w-screen-sm.py-16 {
+      padding: 0;
+    }
+  }
+}
+.title-h2 {
+  font-size: 42px;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+#mobScreen {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  right: 0;
+  margin-bottom: 50px;
+  & + div{
+    margin-top: -600px;
+  }
+}
+
+#why_farm_tracer {
+  .icon-holder {
+    width: 23px;
+    flex-shrink: 0;
+    padding: 0;
+    margin-right: 30px;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .text {
+    max-width: 314px;
+  }
+}
+ #product_id{
+    border: 1px solid #e0e0e0 !important;
+    background-color: #ffffff !important;
+    border-radius: 18px !important;
+    height: 37px;
+    line-height: 37px;
+    outline: none;
+    width: 50% !important;
+    padding: 0px 20px;
+  }
+
+  #co2total::marker {
+  content: " ";
+  }
+  #co2sequested::marker {
+  content: " ";
+  }
+  #co2emitted::marker {
+  content: " ";
+  }
+  @media only screen and (min-width: 1280px) {
+   #co2sequested{
+   width:30%;
+   text-align:center;
+   position:relative;
+   float:left;padding-left: 150px;
+   margin-top: 5px;
+  }
+  #co2emitted{
+   width:30%;
+   text-align:center;
+   position:relative;
+   float:left;padding-left: 130px;
+   padding-right: 10px;
+   margin-top: 5px;
+  }
+  #co2total{
+   width:30%;
+   text-align:center;
+   position:relative;
+   float:right;padding-right: 70px;
+   margin-top: 5px;
+  }
+  
+}
+ 

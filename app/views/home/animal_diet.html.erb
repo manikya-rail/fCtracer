@@ -1,0 +1,105 @@
+<li class="w-full sm:w-1/2 xl:w-1/5 mb-8">
+  <div class="circle-progress-box p-4">
+    <div class="circle-progress relative max-w-full w-40 mx-auto">
+      <svg class="w-full text-primary-base transform -rotate-90" viewbox="0 0 140 140">
+        <linearGradient id="circle-gradient-0" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#054A29" />
+          <stop offset="100%" stop-color="#2A9134" />
+        </linearGradient>
+        <circle cx="70" cy="70" r="64" stroke="#DEDACA" stroke-width="10" fill="none">
+        </circle>
+        <circle stroke="url(#circle-gradient-0)" cx="70" cy="70" r="64"
+          stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="400"
+          stroke-dashoffset="<%= 400 - (@animal.forages / @animal.total) * 400 %>">
+        </circle>
+      </svg>
+      <h5 class="absolute w-full h-full flex items-center justify-center text-2xl z-10 top-0 left-0 text-gray-800">
+        <%= number_with_precision(@animal.forages, precision: 1, strip_insignificant_zeros: true, delimiter: ',') %> <sub class="text-sm pl-1">lbs</sub></h5>
+    </div>
+    <h4 class="mt-4 text-gray-800">Grass & Local Forages</h4>
+  </div>
+</li>
+<li class="w-full sm:w-1/2 xl:w-1/5 mb-8">
+  <div class="circle-progress-box p-4">
+    <div class="circle-progress relative max-w-full w-40 mx-auto">
+      <svg class="w-full text-primary-base transform -rotate-90" viewbox="0 0 140 140">
+        <linearGradient id="circle-gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#054A29" />
+          <stop offset="100%" stop-color="#2A9134" />
+        </linearGradient>
+        <circle cx="70" cy="70" r="64" stroke="#DEDACA" stroke-width="10" fill="none">
+        </circle>
+        <circle stroke="url(#circle-gradient-1)" cx="70" cy="70" r="64"
+          stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="400"
+          stroke-dashoffset="<%= 400 - (@animal.byproducts / @animal.total) * 400 %>">
+        </circle>
+      </svg>
+      <h5 class="absolute w-full h-full flex items-center justify-center text-2xl z-10 top-0 left-0 text-gray-800">
+        <%= number_with_precision(@animal.byproducts, precision: 1, strip_insignificant_zeros: true, delimiter: ',') %> <sub class="text-sm pl-1">lbs</sub></h5>
+    </div>
+    <h4 class="mt-4 text-gray-800">Recycled Byproducts</h4>
+  </div>
+</li>
+<li class="w-full sm:w-1/2 xl:w-1/5 mb-8">
+  <div class="circle-progress-box p-4">
+    <div class="circle-progress relative max-w-full w-40 mx-auto">
+      <svg class="w-full text-primary-base transform -rotate-90" viewbox="0 0 140 140">
+        <linearGradient id="circle-gradient-2" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#054A29" />
+          <stop offset="100%" stop-color="#2A9134" />
+        </linearGradient>
+        <circle cx="70" cy="70" r="64" stroke="#DEDACA" stroke-width="10" fill="none">
+        </circle>
+        <circle stroke="url(#circle-gradient-2)" cx="70" cy="70" r="64"
+          stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="400"
+          stroke-dashoffset="<%= 400 - (@animal.corn / @animal.total) * 400 %>">
+        </circle>
+      </svg>
+      <h5 class="absolute w-full h-full flex items-center justify-center text-2xl z-10 top-0 left-0 text-gray-800">
+        <%= number_with_precision(@animal.corn, precision: 1, strip_insignificant_zeros: true, delimiter: ',') %> <sub class="text-sm pl-1">lbs</sub></h5>
+    </div>
+    <h4 class="mt-4 text-gray-800">Corn</h4>
+  </div>
+</li>
+<li class="w-full sm:w-1/2 xl:w-1/5 mb-8">
+  <div class="circle-progress-box p-4">
+    <div class="circle-progress relative max-w-full w-40 mx-auto">
+      <svg class="w-full text-primary-base transform -rotate-90" viewbox="0 0 140 140">
+        <linearGradient id="circle-gradient-3" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#054A29" />
+          <stop offset="100%" stop-color="#2A9134" />
+        </linearGradient>
+        <circle cx="70" cy="70" r="64" stroke="#DEDACA" stroke-width="10" fill="none">
+        </circle>
+        <circle stroke="url(#circle-gradient-3)" cx="70" cy="70" r="64"
+          stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="400"
+          stroke-dashoffset="<%= 400 - (@animal.minerals / @animal.total) * 400 %>">
+        </circle>
+      </svg>
+      <h5 class="absolute w-full h-full flex items-center justify-center text-2xl z-10 top-0 left-0 text-gray-800">
+        <%= number_with_precision(@animal.minerals, precision: 1, strip_insignificant_zeros: true, delimiter: ',') %> <sub class="text-sm pl-1">lbs</sub></h5>
+    </div>
+    <h4 class="mt-4 text-gray-800">Concentrates & Mineral</h4>
+  </div>
+</li>
+<li class="w-full sm:w-1/2 xl:w-1/5 mb-8">
+  <div class="circle-progress-box p-4">
+    <div class="circle-progress relative max-w-full w-40 mx-auto">
+      <svg class="w-full text-primary-base transform -rotate-90" viewbox="0 0 140 140">
+        <linearGradient id="circle-gradient-4" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#054A29" />
+          <stop offset="100%" stop-color="#2A9134" />
+        </linearGradient>
+        <circle cx="70" cy="70" r="64" stroke="#DEDACA" stroke-width="10" fill="none">
+        </circle>
+        <circle stroke="url(#circle-gradient-4)" cx="70" cy="70" r="64"
+          stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="400"
+          stroke-dashoffset="<%= 400 - (@animal.milk_lbs / @animal.total) * 400 %>">
+        </circle>
+      </svg>
+      <h5 class="absolute w-full h-full flex items-center justify-center text-2xl z-10 top-0 left-0 text-gray-800">
+        <%= number_with_precision(@animal.milk_gallons, precision: 1, strip_insignificant_zeros: true, delimiter: ',') %> <sub class="text-sm pl-1">gal</sub></h5>
+    </div>
+    <h4 class="mt-4 text-gray-800">Calves Milk</h4>
+  </div>
+</li>

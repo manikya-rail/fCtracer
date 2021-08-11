@@ -1,0 +1,3 @@
+files:
+  - 'app/javascript/stylesheets/application.scss'
+  - 'app/views/*.*'

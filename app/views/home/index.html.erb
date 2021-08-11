@@ -1,0 +1,262 @@
+<% if notice.present? %>
+  <div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= notice %>
+  </div>
+<% end %> 
+<div class="flex-1">
+  <div id="top-area">
+    <section class="ft-sc ft-sc-banner pt-8 pb-20 md:pt-10 md:pb-0 lg:pt-20 text-gray-600 relative">
+      <div id="mobScreen" class="flex container justify-end mx-auto">
+        <div class="w-1/2">
+          <%= image_tag('mobile-screen-75.png', class: 'mx-auto w-72 md:w-auto')  %>
+        </div>
+      </div>
+      <div class="px-5 lg:px-12 z-50">
+        <div class="container mx-auto">
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/2 text-center md:text-left pt-6">
+              <div class="md:max-w-xl mb-20 form-holder">
+                <h5 class="text-primary-base uppercase text-sm">Total Farm transparency</h5>
+                <h2
+                  class="text-gray-800 font-extrabold text-4xl md:text-5xl lg:text-6xl leading-none">
+                  Know what <br> you’re eating</h2>
+                <p class="md:text-2xl mt-2">Trace your food back to the farm to ensure product quality from responsible farmers.</p>
+             
+                <%= form_with url: home_index_url, method: :get, local: true do |f| %>
+                  <div class="flex mt-6 md:text-xl color:grey">
+                    <%=f.select :product_id,[["Animal", 1], ["Cherry", 2]]  %>               
+                  </div> 
+                  <div class="flex mt-6 md:text-xl">
+                    <div class="flex-auto">
+
+                      <%= f.text_field :id, placeholder: 'Look up a code', class: 'w-full px-6 py-3 border border-gray-400 rounded-l-full outline-none md:py-4 focus:border-secondary' %>
+                    </div>
+                    <div class="relative">
+                      <%= f.submit 'Trace Product', class: 'px-8 py-3 bg-secondary text-white rounded-r-full border border-secondary cursor-pointer font-semibold text-center md:py-4 transition-all duration-300 hover:bg-primary-base hover:border-primary-base -ml-1' %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section id="how_it_works">
+        <div class="w-1/2 bg-white flex justify-end lg:px-20 px-4">
+          <div class="holder">
+            <div class="badge">
+              <div class="clamp">
+                <strong>Featured Farm:</strong> Royal Ranch is a family farm in Central Washington, known for excellent products produced in a mild climate.
+                <a href="http://www.royalfamilyfarming.com/" class="transition-all duration-300 hover:text-secondary underline">Learn More</a>
+              </div>
+              <%= image_tag('badge.svg')  %>
+            </div>
+
+            <h5 class="text-primary-base uppercase text-sm mb-5">How it works</h5>
+            <h2
+              class="text-gray-800 font-extrabold text-2xl leading-tight mb-12 title-h2">
+              Three steps to traceability. </h2>
+            <ul class="steps-list">
+              <li class="flex items-center pb-16">
+                <div class="flex-0">
+                <%= image_tag('icon-choose-product.svg', class: "w-16")  %>
+
+                </div>
+                <div class="flex-auto pl-5">
+                  <h5 class="text-gray-800 text-lg">1. Choose your product</h5>
+                  <p>Select which product you’d like to source back to its farm.</p>
+                </div>
+              </li>
+              <li class="flex items-center pb-16">
+                <div class="flex-0">
+                <%= image_tag('icon-scan.svg', class: "w-16")  %>
+
+                </div>
+                <div class="flex-auto pl-5">
+                  <h5 class="text-gray-800 text-lg">2. Scan the QR Code</h5>
+                  <p>Direct your smartphone camera at the packaging’s QR code. </p>
+                </div>
+              </li>
+              <li class="flex items-center pb-16">
+                <div class="flex-0">
+                  <%= image_tag('icon-getresult.svg', class: "w-16")  %>
+                </div>
+                <div class="flex-auto pl-5">
+                  <h5 class="text-gray-800 text-lg">3. Get the results</h5>
+                  <p>Discover the origin, growing location, processing date, and more.</p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+  <section id="why_farm_tracer" class="ft-sc ft-sc-why px-5 py-8 md:py-10 lg:py-16 lg:pb-32 bg-addition">
+    <div class="container mx-auto">
+      <p class="text-primary-base text-sm uppercase font-display text-center">Why Farm Tracer</p>
+      <h2
+        class="text-gray-800 font-extrabold text-center text-2xl mt-2 sm:text-3xl md:text-4xl leading-tight mb-3">
+        Trust Through Transparency</h2>
+      <ul class="mx-auto max-w-screen-lg mt-12 flex flex-wrap">
+        <li class="flex w-full md:w-1/2 mb-8">
+          <div class="icon-holder">
+          <%= image_tag('icon-transparency.svg')  %>
+          </div>
+          <div class="text">
+            <h4 class="text-lg text-gray-800">Certified Responsible</h4>
+            <p>We only certify farms that emphasize responsiblity throughout their entire system of operations.</p>
+          </div>
+        </li>
+        <li class="flex w-full md:w-1/2 mb-8">
+          <div class="icon-holder">
+          <%= image_tag('icon-transparency.svg')  %>
+          </div>
+          <div class="text">
+            <h4 class="text-lg text-gray-800">Quality Guarantee </h4>
+            <p>No more depending on misleading labels. Our seal of approval means the farm is doing it right. </p>
+          </div>
+        </li>
+        <li class="flex w-full md:w-1/2 mb-8">
+          <div class="icon-holder">
+          <%= image_tag('icon-transparency.svg')  %>
+          </div>
+          <div class="text">
+            <h4 class="text-lg text-gray-800">Local Farm to Table</h4>
+            <p>Responsible farming leads to quality products. Eat confidently knowing where your food came from. </p>
+          </div>
+        </li>
+        <li class="flex w-full md:w-1/2 mb-8">
+          <div class="icon-holder">
+          <%= image_tag('icon-transparency.svg')  %>
+
+          </div>
+          <div class="text">
+            <h4 class="text-lg text-gray-800">Support Humane Farms</h4>
+            <p>We only work with farmers who take pride in raising animals humanely. Our certified farms deliver fresh, local produce.</p>
+          </div>
+        </li>
+        <li class="flex w-full md:w-1/2 mb-8">
+          <div class="icon-holder">
+          <%= image_tag('icon-transparency.svg')  %>
+
+          </div>
+          <div class="text">
+            <h4 class="text-lg text-gray-800">Humanely Grown</h4>
+            <p>We work exclusively with farms that pride themselves on raising their animals in a humane environment. </p>
+          </div>
+        </li>
+        <li class="flex w-full md:w-1/2 mb-8">
+          <div class="icon-holder">
+          <%= image_tag('icon-transparency.svg')  %>
+          </div>
+          <div class="text">
+            <h4 class="text-lg text-gray-800">Complete Transparency </h4>
+            <p>Know everything about the farm, from the diet they feed their animals to their product’s carbon footprint.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="about" class="ft-sc ft-sc-about lg:-mt-16">
+    <div class="flex flex-wrap items-center">
+      <div class="w-full lg:w-1/2">
+
+        <%= image_tag('img-aboutfarmer.jpg', class: "w-full")  %>
+      </div>
+      <div class="w-full lg:w-1/2 px-6 md:px-12 lg:px-16 xl:px-20 py-8 md:py-10 lg:py-16">
+        <div class="max-w-screen-sm py-16">
+          <p class="text-primary-base text-sm uppercase font-display">About farmtracer</p>
+          <h2
+            class="text-gray-800 font-extrabold text-2xl mt-2 sm:text-3xl md:text-4xl leading-tight mb-3">
+            Connecting you to better farms</h2>
+          <div class="mt-6">
+            <p class="mb-4">At FarmTracer, we partner with farms willing to be open about their
+              process to ensure that consumers are getting top quality products. Our technological
+              expertise gives responsible farmers a platform to showcase how they’re doing farming
+              right — offering complete transparency and traceability to the end consumer.
+            </p>
+            <p class="mb-4">By giving you a complete look into the farm’s process, you can be
+              informed about what’s going into your body. </p>
+            <p class="mb-4">FarmTracer shares the information, you make the decision. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<section id="get_know_team" class="ft-sc ft-sc-why px-5 py-8 md:py-10 lg:py-16 lg:pb-32 bg-addition">
+  <div class="container mx-auto">
+   <p class="text-primary-base text-sm uppercase font-display text-center">Get to know the team</p>
+   <div class="flex flex-wrap items-center">
+      <div class="w-full lg:w-1/5">
+        <%= image_tag('camille.jpg', class: "w-full",:size => "250x250")  %>
+      </div>
+    <div class="w-full lg:w-auto px-6 md:px-12 lg:px-16 xl:px-20 py-8 md:py-10 lg:py-16">
+        <div class="max-w-screen-sm py-16">
+          <h2
+            class="text-gray-800 font-extrabold text-2xl mt-2 sm:text-3xl md:text-4xl leading-tight mb-3">
+            Camille Allred (Founder) </h2>
+          <div class="mt-6">
+            <p class="mb-4">FarmTracer was started with the objective to add value to the farm and the consumer.  The Allred family recognized this disconnect between the producer, food safety, then consumer.  The combination of Camille’s background of health and city life with the balance of Austin’s farm and work life was the perfect union to begin the process of getting FarmTracer.  Austin was realizing how much information he was tracking and storing on his individual cattle and Camille was loving this knowledge with what she fed her family.   This is how FarmTracer was designed.  Austin has a matchless energy for business and drive to get things done.  He has a bachelors degree in Business from Brigham Young University. 
+            </p>
+            <p class="mb-4">Camille has been in the health world as a coach and as a student.  She has always been conscience of what she ate so when she married a farmer and saw first-hand the loved, time, and care that went into taking care of her food, she wanted the world to know more about their food too.  She now raises four kids along with always finding new ways to make FarmTracer better by bringing in her unique perspective from not being raised on a farm. 
+             </p>
+          </div>
+        </div></div>
+        <div class="flex flex-wrap items-center">
+      <div class="w-auto lg:w-1/5">
+       <%= image_tag('shania', class: "w-full",:size => "250x250")  %> 
+      </div>
+      <div class="w-full lg:w-auto px-6 md:px-12 lg:px-16 xl:px-20 py-8 md:py-10 lg:py-16">
+        <div class="max-w-screen-sm py-16">
+          <h2
+            class="text-gray-800 font-extrabold text-2xl mt-2 sm:text-3xl md:text-4xl leading-tight mb-3">
+            Shaina Davies (CEO) </h2>
+          <div class="mt-6">
+            <p class="mb-4">Shaina graduated with a bachelors in Elementary Education and loved working in the school district with parents and students.   While staying home to raise her four kids she started to recognize the uniqueness in raising your kids on a farm and understanding how your food grows.  While at college Shaina found an apple hundreds of miles away that was grown on their family farm by calling her dad and looking up a product number. This can be available to everyone and she want to share that opportunity to everyone.  Being raised on a farm and being married to a farmer she understands the perspective of the farmer and the hard work that she wants to share with the world to help connect farmer and the rest of the world.
+            </p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+<section id="contact" class="ft-sc ft-sc-contact px-5  md:py-10 lg:py-16 lg:pb-32 ">
+  <div class="container mx-auto border-b border-gray-500 border-opacity-50 py-8 md:py-10 lg:py-16">
+    <div class="flex flex-wrap mx-auto max-w-screen-md">
+      <div class="w-full md:w-1/3 text-center md:text-right">
+        <%= image_tag('badge-farmtracer-certified.svg', class: "inline-block w-40 md:w-auto")  %>
+      </div>
+      <div class="w-full md:w-2/3 md:pl-10 text-center md:text-left">
+        <p class="text-primary-base uppercase font-display">Contact</p>
+        <h2
+          class="text-gray-800 font-extrabold text-2xl mt-2 sm:text-3xl md:text-4xl leading-tight mb-3">
+          Interested in becoming <br> FarmTracer certified?</h2>
+        <p class="mb-5">Join our list of partners that are doing farming right. </p>
+        <a href="https://form.jotform.com/211447337080148"
+          class="bg-secondary text-white px-8 py-3 md:px-10 md:py-4 rounded-full inline-block font-display hover:bg-primary-base transition duration-500 ease-in-out">Become
+          Certified</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certified_partners" class="ft-sc px-5 ">
+   <div class="container mx-auto border-b border-gray-500 border-opacity-50">
+      <p class=" text-sm mt-2 text-black uppercase font-bold text-2xl text-center">Certified Partners</p>
+      <ul class="mx-auto max-w-screen-lg mt-12 flex flex-wrap">
+        <li class="flex w-full md:w-1/2 mb-8 pl-15 justify-center" id="blacklogo">
+          <div class="icon-holder pl-100">
+          <%= image_tag('taylorgreen.jpg')  %>
+          </div>
+        </li>
+        <li class="flex w-full md:w-1/2 mb-8 py-24 justify-center" id="blacklogo">
+          <div class="icon-holder md:object-scale-down">
+          <%= image_tag('blacklogo.jpg',:size => "280x280")  %>
+          </div>
+        </li>
+      </ul>
+   </div>
+</section>

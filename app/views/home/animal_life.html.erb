@@ -1,0 +1,55 @@
+<div class="w-full sm:w-1/2 lg:w-1/4 pb-4 mb-4 border-solid border-b sm:border-l sm:border-b-0 border-gray-550 border-opacity-50 sm:px-5">
+  <h4 class="text-gray-800 text-xl mb-2">Origin</h4>
+  <p class="mb-2">
+    <%= @animal.birth_date %> at <br>
+    <%= @animal.birth_farm %>
+    <% if @animal.birth_farm.city.present? || @animal.birth_farm.state.present? %>
+      <br> <%= [@animal.birth_farm.city, @animal.birth_farm.state].compact.join(', ') %>
+    <% end %>
+  </p>
+</div>
+<div class="w-full sm:w-1/2 lg:w-1/4 pb-4 mb-4 border-solid border-b sm:border-l sm:border-b-0 border-gray-550 border-opacity-50 sm:px-5">
+  <h4 class="text-gray-800 text-xl mb-2">Growth</h4>
+  <p class="mb-2">
+    Grown at <%= @animal.birth_farm %>
+    <% if @animal.birth_farm.city.present? || @animal.birth_farm.state.present? %>
+      <br> <%= [@animal.birth_farm.city, @animal.birth_farm.state].compact.join(', ') %>
+    <% end %>
+  </p>
+  <p class="mb-2">
+    Finished at <%= @animal.death_farm %>
+    <% if @animal.death_farm.city.present? || @animal.death_farm.state.present? %>
+      <br> <%= [@animal.death_farm.city, @animal.death_farm.state].compact.join(', ') %>
+    <% end %>
+  </p>
+  <ul class="list-disc ml-5">
+    <li>Humanely Raised</li>
+  </ul>
+</div>
+<div class="w-full sm:w-1/2 lg:w-1/4 pb-4 mb-4 border-solid border-b sm:border-l sm:border-b-0 border-gray-550 border-opacity-50 sm:px-5">
+  <h4 class="text-gray-800 text-xl mb-2">Sire & Dam</h4>
+  <p class="mb-2">Sire: <%= @animal.sire_name %></p>
+  <p class="mb-2">
+    Dam: <%= @animal.birth_farm %>
+    <% if @animal.birth_farm.city.present? || @animal.birth_farm.state.present? %>
+      <br> <%= [@animal.birth_farm.city, @animal.birth_farm.state].compact.join(', ') %>
+    <% end %>
+  </p>
+</div>
+<div class="w-full sm:w-1/2 lg:w-1/4 pb-4 mb-4 border-solid border-b sm:border-l sm:border-b-0 border-gray-550 border-opacity-50 sm:px-5">
+  <h4 class="text-gray-800 text-xl mb-2">Conversion</h4>
+  <p class="mb-2">
+    <%= "#{@animal.death_date} at <br>".html_safe if @animal.death_date %>
+    <%= @animal.conversion_farm %>
+    <% if @animal.conversion_farm.city.present? || @animal.conversion_farm.state.present? %>
+      <br> <%= [@animal.conversion_farm.city, @animal.conversion_farm.state].compact.join(', ') %>
+    <% end %>
+  </p>
+  <ul class="list-disc ml-5">
+    <li>Hormone Free</li>
+    <li>Antibiotic Free</li>
+    <% if @animal.grade %>
+      <li>Grade: <%= @animal.grade %></li>
+    <% end %>
+  </ul>
+</div>
